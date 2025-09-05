@@ -1,0 +1,10 @@
+messages:
+  no-permission: "&cNo tienes permiso para usar esto."
+  invalid-command: "&cComando incorrecto."
+  extractor-received: "&aHas recibido un extractor."
+  convert-success: "&aHas convertido tu item a un extractor."
+  convert-fail: "&cEste item ya es un extractor"
+  invalid-number: "&cIntroduce un número válido."
+  set-uses-success: "&aUsos establecidos en %amount%."
+  set-uses-fail: "&cNo es un extractor."
+  must-hold-pickaxe: "&cDebes tener un pico en la mano."
