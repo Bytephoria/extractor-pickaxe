@@ -1,11 +1,21 @@
 # extractor-pickaxe
 
-[![Java](https://img.shields.io/badge/Java-17+-blue)](https://www.java.com/)
-[![PaperMC](https://img.shields.io/badge/PaperMC-1.18.2%2B-green)](https://papermc.io/)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Discord](https://img.shields.io/discord/1350369915521204276?label=Discord&color=7289DA&logo=discord&logoColor=white)](https://discord.com/invite/3K9yrZQRmS)
+<p align="center">
+  <a href="https://www.java.com/">
+    <img src="https://img.shields.io/badge/Java-17+-blue" alt="Java"/>
+  </a>
+  <a href="https://papermc.io/">
+    <img src="https://img.shields.io/badge/PaperMC-1.18.2%2B-green" alt="PaperMC"/>
+  </a>
+  <a href="LICENSE">
+    <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License"/>
+  </a>
+  <a href="https://discord.com/invite/3K9yrZQRmS">
+    <img src="https://img.shields.io/discord/1350369915521204276?label=Discord&color=7289DA&logo=discord&logoColor=white" alt="Discord"/>
+  </a>
+</p>
 
-**extractor-pickaxe** is a **Minecraft** plugin designed specifically for **PaperMC** servers. It allows you to create and manage special pickaxes called *extractors*, which have limited uses and store custom data using Bukkit's **PersistentDataContainer**.
+**extractor-pickaxe** is a **Minecraft** plugin for PaperMC that lets you create powerful pickaxes capable of mining spawner blocks, even in protected **WorldGuard** regions.
 
 > ⚠️ This project is implemented with PaperMC in mind and may not work properly on other server implementations.
 
@@ -28,6 +38,16 @@
 - Convert regular items into extractors.
 - Safe usage system that prevents modifying non-extractor items.
 - Fully compatible with PaperMC and Bukkit API.
+
+---
+
+## Commands
+
+| Name                |          Permission          |                             Description                             |
+|---------------------|:----------------------------:|:-------------------------------------------------------------------:|
+| /extractor get      | extractorpickaxe.command.use |                   Get a netherite mining pickaxe                    |
+| /extractor convert  | extractorpickaxe.command.use |            Turn the pick in your hand into an extractor             |
+| /extractor set-uses | extractorpickaxe.command.use | Set the number of uses for the extractor pick you have in your hand |
 
 ---
 
