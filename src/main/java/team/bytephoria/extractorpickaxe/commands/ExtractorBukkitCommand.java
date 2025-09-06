@@ -118,24 +118,36 @@ public final class ExtractorBukkitCommand extends BukkitCommand {
         player.sendMessage(LegacyComponentUtil.asComponent(message));
     }
 
+    private boolean hasPermission(final @NotNull CommandSender commandSender) {
+        return commandSender.hasPermission(ExtractorPermissions.COMMAND_USE);
+    }
+
     @Override
-    public @NotNull List<String> tabComplete(final @NotNull CommandSender commandSender, final @NotNull String alias, final @NotNull String[] arguments) {
-        if (!commandSender.hasPermission(ExtractorPermissions.COMMAND_USE)) {
-            return Collections.emptyList();
-        }
+    public @NotNull List<String> tabComplete(final @NotNull CommandSender commandSender, final @NotNull String alias, final @NotNull String @NotNull [] arguments) {
+        return switch (arguments.length) {
+            case 1 -> {
+                if (this.hasPermission(commandSender)) {
+                    final String argumentZero = arguments[0].toLowerCase();
+                    yield this.getSubcommands().stream()
+                            .filter(command -> command.startsWith(argumentZero))
+                            .collect(Collectors.toList());
+                }
 
-        if (arguments.length == 1) {
-            final String argumentZero = arguments[0].toLowerCase();
-            return this.getSubcommands().stream()
-                    .filter(cmd -> cmd.startsWith(argumentZero))
-                    .collect(Collectors.toList());
-        }
+                yield Collections.emptyList();
+            }
 
-        if (arguments.length == 2 && arguments[0].equalsIgnoreCase("set-uses")) {
-            return List.of("1", "5", "10", "50", "100");
-        }
+            case 2 -> {
+                if (this.hasPermission(commandSender)) {
+                    if (arguments[0].equalsIgnoreCase("set-uses")) {
+                        yield List.of("1", "5", "10", "50", "100");
+                    }
+                }
 
-        return Collections.emptyList();
+                yield Collections.emptyList();
+            }
+
+            default -> Collections.emptyList();
+        };
     }
 
     @Contract(value = " -> new", pure = true)
