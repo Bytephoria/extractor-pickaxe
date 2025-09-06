@@ -52,7 +52,7 @@ public final class ExtractorBukkitCommand extends BukkitCommand {
             return true;
         }
 
-        if (!player.hasPermission(ExtractorPermissions.COMMAND_USE)) {
+        if (!this.hasPermission(commandSender)) {
             this.sendMessage(player, this.cacheData.getNoPermission());
             return true;
         }
