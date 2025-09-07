@@ -65,8 +65,8 @@
 You can download the plugin from the following pages:
 
 - [Builtbybit](https://builtbybit.com/resources/extractor-pickaxe.76490/)
-- [Modrinth](https://modrinth.com/)
-- [Hanger](https://hangar.papermc.io/Bytephoria/extractor-pickaxe)
+- [Modrinth](https://modrinth.com/plugin/extractor-pickaxe)
+- [Hangar](https://hangar.papermc.io/Bytephoria/extractor-pickaxe)
 
 ---
 
